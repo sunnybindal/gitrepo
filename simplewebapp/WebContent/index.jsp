@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-simple web app
+simple web application without any controllers
 </body>
 </html>
