@@ -1,5 +1,0 @@
-com\sunny\entity\User.class
-com\sunny\service\UserService.class
-com\sunny\controller\HomeController.class
-com\sunny\service\UserServiceImpl.class
-com\sunny\dao\UserDao.class
