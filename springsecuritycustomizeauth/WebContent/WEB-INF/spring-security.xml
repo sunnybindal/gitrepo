@@ -13,10 +13,10 @@
 		<access-denied-handler error-page="/403" />
 		
 		<form-login login-page="/login" default-target-url="/welcome"
-			authentication-failure-url="/login?error" username-parameter="username"
+			authentication-failure-url="/login?error=1" username-parameter="username"
 			password-parameter="password" />
 		
-		<logout logout-success-url="/login?logout" invalidate-session="true" delete-cookies="JSESSIONID" />
+		<logout logout-success-url="/login?logout=1" invalidate-session="true" delete-cookies="JSESSIONID" />
 		
 		<!-- enable csrf protection -->
 		<csrf />
@@ -27,7 +27,7 @@
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
 				users-by-username-query="select username,password, enabled from users where username=?"
-				authorities-by-username-query="select username, role from user_roles where username =?  " />
+				authorities-by-username-query="select username, role from user_roles where username =?" />
 		</authentication-provider>
 	</authentication-manager>
 

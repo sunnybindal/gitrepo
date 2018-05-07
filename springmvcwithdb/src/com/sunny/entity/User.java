@@ -3,6 +3,12 @@ package com.sunny.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 @Entity
 public class User {
@@ -11,9 +17,22 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
+	@NotBlank(message="please enter the firsname")
 	private String firstName;
 	private String lastName;
+	@NotBlank(message="Please enter the email")
+	@Email(message="Please enter valid email")
 	private String email;
+
+	@NumberFormat(style=Style.NUMBER)
+	private String phone;
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public Long getId() {
 		return id;

@@ -30,6 +30,16 @@ public class HomeController {
 				"Hello World from Spring 4 MVC and security");
 		return "welcome";
 	}
+	
+	@RequestMapping(method = RequestMethod.GET,value="welcome")
+	public String sayWelcome(ModelMap model) {
+
+		/*User user = userService.getUserById(1L);
+		System.out.println(user);*/
+		model.addAttribute("greeting",
+				"welcome to Spring 4 MVC and security");
+		return "welcome";
+	}
 
 	@RequestMapping(value = "admin**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
